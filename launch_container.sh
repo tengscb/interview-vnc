@@ -25,7 +25,7 @@ mkdir -p videos
 docker run -d -it \
 --name=intbox \
 --privileged \
--p 6080:26080 \
+-p 80:26080 \
 -v /dev/shm=/dev/shm \
 -v $(pwd)/videos:/videos \
 -e SCREEN_WIDTH=1440 \
