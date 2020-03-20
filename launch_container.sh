@@ -22,6 +22,9 @@ apt-get -y install docker-ce docker-ce-cli containerd.io
 
 mkdir -p videos
 
+docker stop intbox
+docker rm intbox
+
 docker run -d -it \
 --name=intbox \
 --privileged \
