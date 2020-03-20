@@ -29,10 +29,11 @@ docker run -d -it \
 --name=intbox \
 --privileged \
 -p 80:26080 \
--v /dev/shm=/dev/shm \
+-v /dev/shm:/dev/shm \
 -v $(pwd)/videos:/videos \
 -e SCREEN_WIDTH=1440 \
 -e SCREEN_HEIGHT=900 \
 -e NOVNC=true \
 -e VIDEO=true \
+-e VIDEO_FILE_NAME=interview_recording \
 billsun/coding-interview:1.0
