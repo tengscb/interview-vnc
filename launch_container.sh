@@ -20,7 +20,7 @@ apt-get update
 
 apt-get -y install docker-ce docker-ce-cli containerd.io
 
-mkdir videos
+mkdir -p videos
 
 docker run -d -it \
 --name=intbox \
@@ -28,8 +28,8 @@ docker run -d -it \
 -p 6080:26080 \
 -v /dev/shm=/dev/shm \
 -v $(pwd)/videos:/videos \
--e SCREEN_WIDTH=1440
--e SCREEN_HEIGHT=900
--e NOVNC=true
--e VIDEO=true
+-e SCREEN_WIDTH=1440 \
+-e SCREEN_HEIGHT=900 \
+-e NOVNC=true \
+-e VIDEO=true \
 billsun/coding-interview:1.0
