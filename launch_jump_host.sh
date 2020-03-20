@@ -29,7 +29,6 @@ docker run -d -it \
 --privileged \
 -p 80:26080 \
 -v /dev/shm:/dev/shm \
--v $(pwd)/videos:/videos \
 -e SCREEN_WIDTH=1440 \
 -e SCREEN_HEIGHT=900 \
 -e NOVNC=true \
