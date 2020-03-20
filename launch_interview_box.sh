@@ -22,11 +22,13 @@ apt-get -y install docker-ce docker-ce-cli containerd.io
 
 mkdir -p videos
 
-docker stop intbox
-docker rm intbox
+CONTAINER=CONTAINER=jumphost
+
+docker stop $CONTAINER
+docker rm $CONTAINER
 
 docker run -d -it \
---name=intbox \
+--name=${CONTAINER} \
 --privileged \
 -p 80:26080 \
 -v /dev/shm:/dev/shm \
