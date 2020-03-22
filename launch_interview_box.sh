@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [ -z "$1" ]
+  then
+    echo "USAGE: ./launch_interview_box.sh <intellij|intellij-dark|eclipse>"
+    exit 1
+fi
+
+TAG=$1
+
 apt-get update
 
 apt-get -y install \
@@ -38,7 +46,7 @@ docker run -d -it \
 -e NOVNC=true \
 -e VIDEO=true \
 -e VIDEO_FILE_NAME=interview_recording \
-billsun/coding-interview:1.0
+billsun/coding-interview:$TAG
 
 apt-get install git
 
