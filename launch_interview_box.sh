@@ -39,3 +39,9 @@ docker run -d -it \
 -e VIDEO=true \
 -e VIDEO_FILE_NAME=interview_recording \
 billsun/coding-interview:1.0
+
+apt-get install git
+
+git clone https://github.com/tengscb/coding-question.git
+
+docker cp coding-question $CONTAINER:/home/seluser/coding-question
