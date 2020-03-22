@@ -3,17 +3,24 @@
 if [ "$EUID" -ne 0 ]
   then
     echo "Please run with sudo"
-    echo "USAGE: sudo ./launch_interview_box.sh <intellij|intellij-dark|eclipse>"
-    exit 2
+    echo "USAGE: sudo ./launch_interview_box.sh <intellij|intellij-dark|eclipse> <vnc_password>"
+    exit 1
 fi
 
 if [ -z "$1" ]
   then
-    echo "USAGE: sudo ./launch_interview_box.sh <intellij|intellij-dark|eclipse>"
-    exit 1
+    echo "USAGE: sudo ./launch_interview_box.sh <intellij|intellij-dark|eclipse> <vnc_password>"
+    exit 2
+fi
+
+if [ -z "$2" ]
+  then
+    echo "USAGE: sudo ./launch_interview_box.sh <intellij|intellij-dark|eclipse> <vnc_password>"
+    exit 3
 fi
 
 TAG=$1
+VNC_PWD=$2
 
 apt-get update
 
@@ -51,6 +58,7 @@ docker run -d -it \
 -e SCREEN_WIDTH=1440 \
 -e SCREEN_HEIGHT=900 \
 -e NOVNC=true \
+-e VNC_PASSWORD=${VNC_PWD} \
 -e VIDEO=true \
 -e VIDEO_FILE_NAME=interview_recording \
 billsun/coding-interview:$TAG
