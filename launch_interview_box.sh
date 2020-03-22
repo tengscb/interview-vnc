@@ -63,6 +63,8 @@ docker run -d -it \
 -e VIDEO_FILE_NAME=interview_recording \
 -e HTTP_PROXY=10.0.0.1 \
 -e HTTPS_PROXY=10.0.0.1 \
+-e NO_PROXY=localhost,127.0.0.1 \
+-e no_proxy=localhost,127.0.0.1 \
 billsun/coding-interview:$TAG
 
 apt-get install git
