@@ -60,3 +60,5 @@ apt-get install git
 git clone https://github.com/tengscb/coding-question.git
 
 docker cp coding-question $CONTAINER:/home/seluser/coding-question
+docker exec $CONTAINER sh -c "sudo chown seluser:seluser /home/seluser/coding-question/*"
+docker exec $CONTAINER sh -c "sudo chmod +x /home/seluser/coding-question/*.sh"
