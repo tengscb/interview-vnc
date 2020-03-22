@@ -37,7 +37,7 @@ apt-get -y install docker-ce docker-ce-cli containerd.io
 
 mkdir -p videos
 
-CONTAINER=CONTAINER=jumphost
+CONTAINER=intbox
 
 docker stop $CONTAINER
 docker rm $CONTAINER
