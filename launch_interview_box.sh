@@ -1,8 +1,15 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]
+  then
+    echo "Please run with sudo"
+    echo "USAGE: sudo ./launch_interview_box.sh <intellij|intellij-dark|eclipse>"
+    exit 2
+fi
+
 if [ -z "$1" ]
   then
-    echo "USAGE: ./launch_interview_box.sh <intellij|intellij-dark|eclipse>"
+    echo "USAGE: sudo ./launch_interview_box.sh <intellij|intellij-dark|eclipse>"
     exit 1
 fi
 
