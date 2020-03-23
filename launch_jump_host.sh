@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]
+  then
+    echo "Please run with sudo"
+    echo "USAGE: sudo ./launch_jump_host.sh"
+    exit 1
+fi
+
 apt-get update
 
 apt-get -y install \

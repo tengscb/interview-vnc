@@ -1,6 +1,6 @@
 # interview-vnc
 
-## Setup Instruction
+## Setup Instruction for Interview Box
 
 From GCP, create a new instance with the following spec
  - Machine Type: `n1-standard-4 (4 vCPUs, 15 GB memory)` 
@@ -31,4 +31,12 @@ From within the test machine, open terminal and run
 ```
 cd coding-test
 ./start-interview.sh
+```
+
+## Setup Instruction for Jump Host
+
+```
+curl -O https://raw.githubusercontent.com/tengscb/interview-vnc/master/launch_jump_host.sh
+chmod +x launch_jump_host.sh
+sudo ./launch_jump_host.sh
 ```
