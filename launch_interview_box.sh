@@ -61,6 +61,9 @@ docker run -d -it \
 -e VNC_PASSWORD=${VNC_PWD} \
 -e VIDEO=true \
 -e VIDEO_FILE_NAME=interview_recording \
+-e GRID=false \
+-e CHROME=false \
+-e FIREFOX=false \
 billsun/coding-interview:$TAG
 
 apt-get install git

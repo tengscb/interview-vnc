@@ -32,4 +32,7 @@ docker run -d -it \
 -e SCREEN_WIDTH=1440 \
 -e SCREEN_HEIGHT=900 \
 -e NOVNC=true \
+-e GRID=false \
+-e CHROME=false \
+-e FIREFOX=false \
 elgalu/selenium
